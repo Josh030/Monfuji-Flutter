@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:learn_flutter/erjan/home.dart';
 import 'package:learn_flutter/temka/home.dart';
 
 void main() {
@@ -106,15 +107,15 @@ class _MyHomePageState extends State<MyHomePage> {
                   );
                 },
                 child: const Text('Temka')),
-            //  ElevatedButton(
-            // onPressed: () {
-            //   Navigator.push(
-            //     context,
-            //     MaterialPageRoute(
-            //         builder: (context) => const TemkaPage(title: 'Temka')),
-            //   );
-            // },
-            // child: const Text('Temka')),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const ErjanPage(title: 'Erjan')),
+                  );
+                },
+                child: const Text('Erjan')),
             //  ElevatedButton(
             // onPressed: () {
             //   Navigator.push(
