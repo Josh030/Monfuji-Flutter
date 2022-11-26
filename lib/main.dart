@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:learn_flutter/temka/home.dart';
 
 void main() {
   runApp(const MyApp());
@@ -96,22 +97,33 @@ class _MyHomePageState extends State<MyHomePage> {
           // horizontal).
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const Text(
-              'toched',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-            const Padding(
-              padding: EdgeInsets.fromLTRB(50, 50, 50, 70),
-              child: TextField(
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(),
-                  hintText: 'Enter a search term',
-                ),
-              ),
-            ),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const TemkaPage(title: 'Temka')),
+                  );
+                },
+                child: const Text('Temka')),
+            //  ElevatedButton(
+            // onPressed: () {
+            //   Navigator.push(
+            //     context,
+            //     MaterialPageRoute(
+            //         builder: (context) => const TemkaPage(title: 'Temka')),
+            //   );
+            // },
+            // child: const Text('Temka')),
+            //  ElevatedButton(
+            // onPressed: () {
+            //   Navigator.push(
+            //     context,
+            //     MaterialPageRoute(
+            //         builder: (context) => const TemkaPage(title: 'Temka')),
+            //   );
+            // },
+            // child: const Text('Temka'))
           ],
         ),
       ),
