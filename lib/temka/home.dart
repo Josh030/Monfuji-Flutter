@@ -26,23 +26,28 @@ class TemkaPageState extends State<TemkaPage> {
       ),
       body: Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'toched',
+          children: [
+            const CircleAvatar(
+              radius: 50.0,
+              backgroundImage:
+                  NetworkImage("https://picsum.photos/250?image=9", scale: 1),
+              backgroundColor: Colors.transparent,
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-            const Padding(
-              padding: EdgeInsets.fromLTRB(50, 50, 50, 70),
-              child: TextField(
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(),
-                  hintText: 'Enter a search term',
-                ),
-              ),
+            Container(
+              width: 200,
+              height: 200,
+              decoration: BoxDecoration(
+                  border: Border.all(width: 2, color: Colors.red),
+                  color: Color(0xffFFA500),
+                  borderRadius: BorderRadius.circular(5)),
+              child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Image.network(
+                      'https://picsum.photos/250?image=9',
+                      fit: BoxFit.fitHeight,
+                    ),
+                  ]),
             ),
           ],
         ),
