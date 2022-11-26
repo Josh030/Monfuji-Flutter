@@ -9,15 +9,6 @@ class ErjanPage extends StatefulWidget {
 }
 
 class ErjanPageState extends State<ErjanPage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter = _counter + 2;
-    });
-    print('stateiin utga: $_counter');
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,33 +16,17 @@ class ErjanPageState extends State<ErjanPage> {
         title: Text(widget.title),
       ),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'toched',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-            const Padding(
-              padding: EdgeInsets.fromLTRB(50, 50, 50, 70),
-              child: TextField(
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(),
-                  hintText: 'Enter a search term',
-                ),
-              ),
-            ),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ),
+          child: Container(
+              width: 200,
+              height: 200,
+              decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  border: Border.all(
+                      width: 3,
+                      style: BorderStyle.solid,
+                      color: const Color.fromARGB(255, 116, 115, 115))),
+              child: Image.network(
+                  'https://swebtoon-phinf.pstatic.net/20210416_246/1618538712453qwxwn_JPEG/772eb55e-5b4f-408b-8072-311ce916f5d9.jpg'))),
     );
   }
 }
