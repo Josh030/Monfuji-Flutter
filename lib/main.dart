@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:learn_flutter/erjan/home.dart';
 import 'package:learn_flutter/genden/home.dart';
-import 'package:learn_flutter/temka/home.dart';
+import 'package:learn_flutter/temka/login.dart';
+import 'package:learn_flutter/temka/register.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,6 +15,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
@@ -50,21 +52,40 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  ElevatedButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const LoginPage()),
+                        );
+                      },
+                      child: const Text('Login')),
+                  const SizedBox(width: 10),
+                  ElevatedButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => RegisterPage()),
+                        );
+                      },
+                      child: const Text('Register')),
+                ],
+              ),
+            ),
             ElevatedButton(
                 onPressed: () {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => const TemkaPage(title: 'Temka')),
-                  );
-                },
-                child: const Text('Temka')),
-            ElevatedButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const ErjanPage(title: 'Erjan')),
+                        builder: (context) =>
+                            const ErjanPage(title: 'Register')),
                   );
                 },
                 child: const Text('Erjan')),

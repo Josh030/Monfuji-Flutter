@@ -1,4 +1,7 @@
+// ignore_for_file: avoid_print
+
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class TemkaPage extends StatefulWidget {
   const TemkaPage({super.key, required this.title});
@@ -9,6 +12,19 @@ class TemkaPage extends StatefulWidget {
 }
 
 class TemkaPageState extends State<TemkaPage> {
+  @override
+  initState() {
+    init();
+  }
+
+  void init() async {
+    final prefs = await SharedPreferences.getInstance();
+    String? token = await prefs.getString('token');
+    if (token != null) {
+      print(token);
+    }
+  }
+
   int _counter = 0;
 
   void _incrementCounter() {
