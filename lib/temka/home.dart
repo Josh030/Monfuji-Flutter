@@ -1,6 +1,7 @@
 // ignore_for_file: avoid_print
 
 import 'package:flutter/material.dart';
+import 'package:learn_flutter/temka/profilepage.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class TemkaPage extends StatefulWidget {
@@ -69,7 +70,12 @@ class TemkaPageState extends State<TemkaPage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const ProfilePage()),
+          );
+        },
         tooltip: 'Increment',
         child: const Icon(Icons.add),
       ),
